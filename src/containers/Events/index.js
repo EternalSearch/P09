@@ -15,7 +15,8 @@ const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   
   const filteredEvents = (data?.events || []).filter((event) =>
-    type ? event.type === type : true
+    type ? event.type === type : true)
+  .sort((a, b) => new Date(a.date) - new Date(b.date) 
   );
 
   // Pagination après filtrage
